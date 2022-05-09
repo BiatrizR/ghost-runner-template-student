@@ -2,16 +2,15 @@
 var towerImg, tower;
 var doorImg, door, doorsGroup;
 var climberImg, climber, climbersGroup;
-var ghost, ghostImg;
-var invisibleBlockGroup, invisibleBlock;
+
+
 var gameState = "play"
 
 
 function preload(){
   towerImg = loadImage("tower.png");
   doorImg = loadImage("door.png");
-  climberImg = loadImage("climber.png");
-  ghostImg = loadImage("ghost-standing.png");
+ 
   spookySound = loadSound("spooky.wav");
 }
 
@@ -22,13 +21,9 @@ function setup() {
   tower.addImage("tower",towerImg);
   tower.velocityY = 1;
   
-  doorsGroup = new Group();
-  climbersGroup = new Group();
-  invisibleBlockGroup = new Group();
+ 
   
-  ghost = createSprite(200,200,50,50);
-  ghost.scale = 0.3;
-  ghost.addImage("ghost", ghostImg);
+
 }
 
 
@@ -65,7 +60,7 @@ function draw() {
       //escrever um código para fazer o climbersGroup (grupo de escaladores) colidir com o fantasma alterar a velocidade do fantasma  
 //escreva um código para fazer o invisibleBlockGroup (grupo de bloco invisível) colidir com o fantasma, destruir o fantasma e mudar o estado de jogo para end.
   
-  drawSprites();
+
 }
   if (gameState === "end"){
     stroke("yellow");
@@ -86,8 +81,8 @@ function spawnDoors()
     invisibleBlock.height = 2;
     //adicione a função aleatória
     //
-    door.addImage(doorImg);
-    climber.addImage(climberImg);
+   // door.addImage(doorImg);
+   // climber.addImage(climberImg);
     
     door.velocityY = 1;
     climber.velocityY = 1;
